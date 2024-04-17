@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "serve": "npx http-server --port 5432 out",
     "test": "npx playwright test",
-    "test:prod": "npm run build && concurrently 'npx http-server --silent --port 5432 out' 'npm run test' --kill-others -s last",
+    "test:ci": "CI=true npm run test",
     "test:watch": "chokidar '**/*.spec.ts' '**/*.page.tsx' -c 'test_file_path=$(echo {path} | sed s/page.tsx/spec.ts/) && npm run test -- --retries=0 ${test_file_path}'"
   },
   "dependencies": {
@@ -22,7 +23,6 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "chokidar-cli": "^3.0.0",
-    "concurrently": "^8.2.2",
     "typescript": "^5"
   }
 }

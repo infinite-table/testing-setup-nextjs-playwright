@@ -31,6 +31,16 @@ export default defineConfig({
     trace: "on-first-retry",
   },
 
+  // on CI, run the static server to serve the built app
+  webServer: process.env.CI
+    ? {
+        command: "npm run serve",
+        url: "http://localhost:5432",
+        reuseExistingServer: true,
+        timeout: 120 * 1000,
+      }
+    : undefined,
+
   /* Configure projects for major browsers */
   projects: [
     {
