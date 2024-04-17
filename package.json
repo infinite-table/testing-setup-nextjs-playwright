@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "npx playwright test",
-    "test:prod": "npm run build && concurrently 'npx http-server --silent --port 5432 out' 'npm run test' --kill-others -s last",
+    "test:prod": "npm run build && concurrently 'npx http-server --silent --port 5432 out' 'npm run test' --kill-others -s first",
     "test:watch": "chokidar '**/*.spec.ts' '**/*.page.tsx' -c 'test_file_path=$(echo {path} | sed s/page.tsx/spec.ts/) && npm run test -- --retries=0 ${test_file_path}'"
   },
   "dependencies": {
