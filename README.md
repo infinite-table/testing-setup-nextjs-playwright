@@ -20,4 +20,4 @@ Article published at http://infinite-table.com/blog/2024/04/18/the-best-testing-
 
 ## Step 5 - running tests in production build
 
-[See repo at step 3](https://github.com/infinite-table/testing-setup-nextjs-playwright/tree/05-run-tests-on-production-build)
+[See repo at step 5](https://github.com/infinite-table/testing-setup-nextjs-playwright/tree/05-run-tests-on-production-build)
